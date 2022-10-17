@@ -9,7 +9,7 @@ require('chai')
   .use(require('chai-as-promised'))
   .should()
 
-contract('Token', ([deployer, receiver]) => {
+contract('Token', ([deployer, receiver, exchange]) => {
     const name = 'Block Noob Token'
     const symbol = 'BNT'
     const decimals = '18'
@@ -65,7 +65,7 @@ contract('Token', ([deployer, receiver]) => {
                 balanceOf = await token.balanceOf(receiver)
                 balanceOf.toString().should.equal(tokens(100).toString())
             })
-            it('emits a transfer event', async () => {
+            it('emits a Transfer event', async () => {
                 const log = result.logs[0]
                 log.event.should.eq('Transfer')
                 const event = log.args
@@ -91,4 +91,38 @@ contract('Token', ([deployer, receiver]) => {
             })
         })
     })
+    describe('approving tokens', () => {
+      let result
+      let amount
+  
+      beforeEach(async () => {
+        amount = tokens(100)
+        result = await token.approve(exchange, amount, { from: deployer })
+      })
+  
+      describe('success', () => {
+      it('allocates an allowance for delegated token spending on exchange', async () => {
+        const allowance = await token.allowance(deployer, exchange)
+        allowance.toString().should.equal(amount.toString())
+       })
+      it('emits an Approval event', async () => {
+          const log = result.logs[0]
+          log.event.should.eq('Approval')
+          const event = log.args
+          event.owner.toString().should.equal(deployer, 'owner is correct')
+          event.spender.should.equal(exchange, 'spender is correct')
+          event.value.toString().should.equal(amount.toString(), 'value is correct')
+      })
+      })
+  
+  
+      describe('failure', () =>{
+        it('rejects invalid spenders', async () => {
+          await token.approve(0x0, amount, { from: deployer }).should.be.rejected
+        })
+      })
+  })
+    
+
+
 })
