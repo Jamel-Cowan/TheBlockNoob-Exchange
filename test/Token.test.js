@@ -175,11 +175,9 @@ describe('delegated token transfers', () => {
 //       invalidAmount = tokens(10) // Recipient has no tokens
 //       await token.transfer(deployer, invalidAmount, { from: receiver }).should.be.rejectedWith(EVM_REVERT);
       }) 
-      
-      describe('failure', async () =>{
       it('rejects invalid recipients', async ()=> {
-       await token.transferFrom(deployer, 0x0, amount,{ from: exchange }).should.be.rejected
-      })
+        await token.transferFrom(deployer, 0x0, amount,{ from: exchange }).should.be.rejected
+       
 //   })
 // })
 // describe('approving tokens', () => {
