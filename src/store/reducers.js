@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 
+
 function web3(state = {}, action) {
     switch (action.type) {
       case 'WEB3_LOADED':
@@ -21,6 +22,8 @@ function web3(state = {}, action) {
 
 
   function exchange(state = {}, action) {
+    let index, data
+
     switch (action.type) {
       case 'EXCHANGE_LOADED':
         return { ...state, loaded: true, contract: action.contract }
@@ -44,8 +47,30 @@ function web3(state = {}, action) {
                 ]
               }
             }
-          default:
-        return state
+            case 'ORDER_FILLED':
+              // PREVENT DUPLICATE ORDERS
+              index = state.filledOrders.data.findIndex(order => order.id === action.order.id);
+
+              if (index === -1) {
+                data = [...state.filledOrders.data, action.order]
+              } else {
+                data = state.filledOrders.data
+              }
+            
+              return {
+                ...state,
+                orderFilling: false,
+                filledOrders: {
+                  ...state.filledorders,
+                  data
+                }
+              }
+
+              case 'ORDER_FILLING':
+                return { ...state, orderFilling: true }
+
+        default:
+          return state
     }
   }
   const rootReducer = combineReducers({
@@ -56,6 +81,17 @@ function web3(state = {}, action) {
   })
   
   export default rootReducer
+
+
+
+
+
+
+
+
+
+
+
 
 
 
