@@ -5,9 +5,11 @@ function web3(state = {}, action) {
     switch (action.type) {
       case 'WEB3_LOADED':
         return { ...state, connection: action.connection }
-        case 'WEB3_ACCOUNT_LOADED':
-            return { ...state, account: action.account }
-        default:
+      case 'WEB3_ACCOUNT_LOADED':
+          return { ...state, account: action.account }
+      case 'ETHER_BALANCE_LOADED':
+          return { ...state, balance: action.balance }
+      default:
         return state
     }
   }
@@ -15,7 +17,9 @@ function web3(state = {}, action) {
     switch (action.type) {
       case 'TOKEN_LOADED':
         return { ...state, loaded: true, contract: action.contract }
-        default:
+      case 'TOKEN_BALANCE_LOADED':
+        return { ...state, balance: action.balance }
+      default:
         return state
     }
   }
@@ -65,9 +69,25 @@ function web3(state = {}, action) {
                   data
                 }
               }
-
-              case 'ORDER_FILLING':
-                return { ...state, orderFilling: true }
+              
+        case 'ORDER_FILLING':
+          return { ...state, orderFilling: true }
+        case 'EXCHANGE_ETHER_BALANCE_LOADED':
+          return { ...state, etherBalance: action.balance } 
+        case 'EXCHANGE_TOKEN_BALANCE_LOADED':
+          return { ...state, tokenBalance: action.balance } 
+        case 'BALANCES_LOADING':
+          return { ...state, balancesLoading: true }        
+        case 'BALANCES_LOADED':
+          return { ...state, balancesLoading: false } 
+        case 'ETHER_DEPOSIT_AMOUNT_CHANGED':
+          return { ...state, etherDepositAmount: action.amount}
+        case 'ETHER_WITHRAW_AMOUNT_CHANGED':
+          return { ...state, etherWithdrawAmount: action.amount}
+        case 'TOKEN_DEPOSIT_AMOUNT_CHANGED':
+          return { ...state, tokenDepositAmount: action.amount}
+        case 'TOKEN_WITHRAW_AMOUNT_CHANGED':
+          return { ...state, tokenWithdrawAmount: action.amount}
 
         default:
           return state

@@ -13,3 +13,12 @@ export const ether =(wei) => {
 
 // Tokensand ether have same decimal resolution
 export const tokens = ether
+
+export const formatBalance = (balance) => {
+    const precision = 100 // 2 decimal places
+    
+    balance = ether(balance)
+    balance = Math.round(balance * precision) / precision // use 2 decimal places
+    
+    return balance 
+}
