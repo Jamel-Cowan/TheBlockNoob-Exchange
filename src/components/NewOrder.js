@@ -13,7 +13,6 @@ import {
   } from '../store/selectors'
   import {
     buyOrderAmountChanged,
-    buyOrderMaking,
     buyOrderPriceChanged,
     sellOrderAmountChanged,
     sellOrderPriceChanged,

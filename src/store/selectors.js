@@ -323,17 +323,18 @@ const orderFilling = state => get(state, 'exchange.orderFilling', false)
 export const orderFillingSelector = createSelector(orderFilling, status => status)
 
 // BALANCES
-const balancesLoading = state => get(state, 'web3.balance', 0)
+const balancesLoading = state => get(state, 'exchange.balancesLoading', true)
 export const balancesLoadingSelector = createSelector(balancesLoading, status => status)
 
 
+
 // FETCH THE BALANCE AMOUNT
-const etherBalance = state => get(state, 'exchange.balancesLoading', true)
+const etherBalance = state => get(state, 'web3.balance', 0)
 export const etherBalanceSelector = createSelector(
-    etherBalance,
-    (balance) => {
-        return formatBalance(balance)
-    }
+  etherBalance,
+  (balance) => {
+    return formatBalance(balance)
+  }
 )
 
 const tokenBalance = state => get(state, 'token.balance', 0)
