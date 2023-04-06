@@ -6,7 +6,7 @@
   "private": true,
   "homepage": ".",
   "engines": {
-    "node": "8.11.1"
+    "node": "16.14.0"
   },
   "dependencies": {
     "@truffle/hdwallet-provider": "1.1.0",
@@ -34,6 +34,7 @@
     "redux": "4.0.5",
     "redux-logger": "3.0.6",
     "reselect": "4.0.0",
+    "serve": "^14.2.0",
     "solidity-coverage": "^0.8.2",
     "truffle": "^5.8.1",
     "truffle-flattener": "1.5.0",
@@ -41,10 +42,12 @@
     "web3": "1.2.6"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
