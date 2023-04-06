@@ -35,7 +35,7 @@
     "redux-logger": "3.0.6",
     "reselect": "4.0.0",
     "solidity-coverage": "^0.8.2",
-    "truffle": "5.1.45",
+    "truffle": "^5.8.1",
     "truffle-flattener": "1.5.0",
     "truffle-hdwallet-provider-privkey": "0.3.0",
     "web3": "1.2.6"
