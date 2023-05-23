@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { accountSelector } from '../store/selectors'
+import {
+  loadAccount
+} from '../store/interactions'
 
 class Navbar extends Component {
   render() {
@@ -19,6 +22,9 @@ class Navbar extends Component {
               rel="noopener noreferrer"
             >
               {this.props.account}
+              <button onClick={() => loadAccount()}>
+              Connect
+              </button>
             </a>
           </li>
         </ul>
