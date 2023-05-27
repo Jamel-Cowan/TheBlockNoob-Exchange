@@ -21,11 +21,12 @@ class Navbar extends Component {
               target="_blank"
               rel="noopener noreferrer"
             >
+            
+            </a>
               {this.props.account}
               <button onClick={() => loadAccount()}>
               Connect
               </button>
-            </a>
           </li>
         </ul>
       </nav>
