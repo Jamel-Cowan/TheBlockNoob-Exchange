@@ -12,16 +12,14 @@ module.exports = {
       port: 7545,
       network_id: "*" // Match any network id
     },
-    goerli: {
-      provider: function() {
+    sepolia: {
+      provider: function () {
         return new HDWalletProvider(
           privateKeys.split(','), // array of account private keys
-          `https://goerli.infura.io/v3/${process.env.INFURA_API_KEY}` // Url to ethereum node
+          `https://sepolia.infura.io/v3/93d3def4055545b8af7cc37eb4db84bc` // Url to ethereum node
         )
       },
-    gas: 5000000,
-    gasPrice: 25000000000,
-    network_id: 5
+    network_id: 11155111
     }
   },
   contracts_directory: './src/contracts/',
