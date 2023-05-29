@@ -134,6 +134,7 @@
   border-right: 0px;
   border-left: 0px;
   border-bottom: 1px solid #CB3928;
+  
 }
 
 .card-body .price-chart {
@@ -151,4 +152,8 @@ td.cancel-order {
 
 tr.order-book-order {
   cursor: pointer;
+}
+
+.navbar.navbar-dark.bg-primary {
+  background: linear-gradient(to bottom, #CB3928, #000000);
 }
