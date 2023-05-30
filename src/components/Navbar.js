@@ -31,7 +31,10 @@ class Navbar extends Component {
               style={{ color: 'white !important' }}
             >
               {this.props.account}
-              <button onClick={() => loadAccount()}>
+              <button onClick={() => loadAccount()}
+                className="btn btn-dark btn-sm bg-dark"
+                style={{ marginLeft: '8px'}}
+              >
               Connect</button>
             </a>
           </li>
