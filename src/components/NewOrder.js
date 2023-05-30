@@ -69,7 +69,7 @@ const showForm = (props) => {
               />
             </div>
           </div>
-          <button type="submit" className="btn btn-primary btn-sm btn-block">Buy Order</button>
+          <button type="submit" className="btn btn-primary btn-sm btn-block custom-gradient">Buy Order</button>
           { showBuyTotal ? <small>Total: {buyOrder.amount * buyOrder.price} ETH</small> : null }
         </form>
 

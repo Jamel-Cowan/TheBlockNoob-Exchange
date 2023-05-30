@@ -87,7 +87,7 @@ return(
             required />
           </div>
           <div className="col-12 col-sm-auto pl-sm-0">
-            <button type="submit" className="btn btn-primary btn-block btn-sm">Deposit</button>
+            <button type="submit" className="btn btn-primary btn-block btn-sm custom-gradient">Deposit</button>
           </div>
         </form>
 
@@ -114,7 +114,7 @@ return(
             required />
           </div>
           <div className="col-12 col-sm-auto pl-sm-0">
-            <button type="submit" className="btn btn-primary btn-block btn-sm">Deposit</button>
+            <button type="submit" className="btn btn-primary btn-block btn-sm custom-gradient">Deposit</button>
           </div>
         </form>
 
