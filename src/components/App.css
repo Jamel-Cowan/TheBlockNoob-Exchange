@@ -154,6 +154,7 @@ tr.order-book-order {
   cursor: pointer;
 }
 
-.navbar.navbar-dark.bg-primary {
-  background: linear-gradient(to bottom, #CB3928, #000000);
+.custom-bg-gradient {
+  background: linear-gradient(to left, #CB3928, #000000) !important;
+  background-color: #CB3928 !important;
 }
