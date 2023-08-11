@@ -1,4 +1,4 @@
-<img src="" width="100px" >
+<img src="https://images.squarespace-cdn.com/content/v1/62eace4a8ff0397a4e401de5/1685625279679-Y2P28HKUYCYNYZT74RVU/tbn+exchange+02.jpg?format=500w" width="100px" >
 
 # Getting Started with Create React App
 
