@@ -1,5 +1,5 @@
 
-<img src="https://images.squarespace-cdn.com/content/v1/62ea…-88ef-ce096f7b4332/tbn+exchange+.jpg?format=2500w" width=100% >
+<img src="https://images.squarespace-cdn.com/content/v1/62ea…-88ef-ce096f7b4332/tbn+exchange+.jpg?" width=100% >
 <img src="https://images.squarespace-cdn.com/content/v1/62eace4a8ff0397a4e401de5/1685625279679-Y2P28HKUYCYNYZT74RVU/tbn+exchange+02.jpg?format=500w" width=60% >
 
 # Getting Started with Create React App
